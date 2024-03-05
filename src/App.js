@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Button } from './stories/Button';
+import { Header } from './stories/Header';
+import { LoggedIn, LoggedOut } from './stories/Header.stories';
+import { Warning, Primary, Secondary, Large, Small } from './stories/Button.stories';
 function App() {
+  console.log({...Warning.args})
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header {...LoggedIn.args} />
+      <Header {...LoggedOut}/>
+      <Button {...Warning.args}/>
+      <Button {...Primary.args}/>
+      <Button {...Secondary.args}/>
+      <Button {...Large.args}/>
+      <Button {...Small.args}/>
     </div>
   );
 }
